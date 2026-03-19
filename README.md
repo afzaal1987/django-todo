@@ -1,7 +1,5 @@
-# django-todo
-A simple todo app built with django
-
-![todo App](https://raw.githubusercontent.com/shreys7/django-todo/develop/staticfiles/todoApp.png)
+# VM Control Panel (Django)
+A simple Django website to control power ON/OFF actions for 5 virtual machines.
 ### Setup
 To get this repository, run the following command inside your git enabled terminal
 ```bash
@@ -33,6 +31,28 @@ That was pretty simple, right? Now let's make the App live. We just need to star
 $ python manage.py runserver
 ```
 
-Once the server is hosted, head over to http://127.0.0.1:8000/todos for the App.
+Once the server is hosted, head over to http://127.0.0.1:8000/todos for the VM Control Panel.
+
+## Configure real VM commands
+
+By default, each VM action runs an `echo` command so you can test safely.
+To run real commands, update `VM_CONTROL_COMMANDS` in `todoApp/settings.py` (or your environment-specific settings):
+
+```python
+VM_CONTROL_COMMANDS = {
+    "vm1": {
+        "name": "Virtual Machine 1",
+        "power_on": ["virsh", "start", "vm1"],
+        "power_off": ["virsh", "shutdown", "vm1"],
+    },
+    # vm2..vm5
+}
+```
+
+You can also use a single shell command string if needed (for example on Windows):
+
+```python
+"power_on": r"C:\scripts\startvm1.bat"
+```
 
 Cheers and Happy Coding :)
