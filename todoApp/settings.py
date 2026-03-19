@@ -127,3 +127,33 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'staticfiles'),
 )
+
+# VM power control commands used by the control panel page.
+# Replace the default echo commands with your real VM start/stop commands.
+VM_CONTROL_COMMANDS = {
+    "vm1": {
+        "name": "Virtual Machine 1",
+        "power_on": ["echo", "Power ON command executed for VM 1"],
+        "power_off": ["echo", "Power OFF command executed for VM 1"],
+    },
+    "vm2": {
+        "name": "Virtual Machine 2",
+        "power_on": ["echo", "Power ON command executed for VM 2"],
+        "power_off": ["echo", "Power OFF command executed for VM 2"],
+    },
+    "vm3": {
+        "name": "Virtual Machine 3",
+        "power_on": ["echo", "Power ON command executed for VM 3"],
+        "power_off": ["echo", "Power OFF command executed for VM 3"],
+    },
+    "vm4": {
+        "name": "Virtual Machine 4",
+        "power_on": ["echo", "Power ON command executed for VM 4"],
+        "power_off": ["echo", "Power OFF command executed for VM 4"],
+    },
+    "vm5": {
+        "name": "Virtual Machine 5",
+        "power_on": ["echo", "Power ON command executed for VM 5"],
+        "power_off": ["echo", "Power OFF command executed for VM 5"],
+    },
+}
